@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@font-face {
+	src:  url("../fonts/Bitwise-m19x.ttf");
+	font-family: Bitwise;
+}
+
+body {
+	background-color: #000000;
+	color: #1CC500;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+}
+
+.title h1,
+.title h2 {
+	text-decoration: underline;
+	text-align: center;
+	font-family: Bitwise;
+	margin-top: 0px;
+}
+
+.title h1 {
+	font-size: 50px;
+	margin-bottom: 20px;
+}
+
+.title h2 {
+	font-size: 30px;
+	margin-bottom: 40px;
+}
+
+.weapons {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+   	margin-bottom: 10px;
+   	font-family: Bitwise;
+}
+
+.weapons .weapon {
+	width: 250px;
+	height: 250px;
+	justify-content: center;
+	align-items: center;
+	transition: all .3s ease-in-out;
+}
+
+
+.weapons .weapon:hover { 
+    transform: scale(1.2);
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+
+img {
+	transition: .3s ease-in-out;
+}
+
+img:hover {
+	background-color: #414141;
+	transition: .3s ease-in-out;
+}
+
+.weapons img {
+	width: 150px;
+	height: 150px;
+	padding: 10px;
+	border-style: solid;
+	border-width: 8px;
+	border-radius: 24px;
+}
+
+.weapons p {
+	text-align: center;
+	font-size: 32px;
+	margin: 10px;
+}
+
+.score-title {
+	font-family: Bitwise;
+	text-align: center;
+	margin-bottom: 0;
+	font-size: 50px;
+	text-decoration: underline;
+}
+
+.score {
+	display: flex;
+	font-family: Bitwise;
+	justify-content: center;
+	max-height: 100px;
+}
+
+.playerScore, .computerScore {
+	margin: 0 100px 0 100px;
+	font-size: 30px;
+}
+
+.playerScore h2, .computerScore h2 {
+	text-decoration: underline;
+	margin: 5px 0 0 0;
+}
+
+#message {
+	font-family: Bitwise;
+	text-align: center;
+	margin-top: 20px;
+	font-size: 30px;
+}
+
+
+.rules h3 {
+	margin-top: 60px;
+	margin-bottom: 10px;
+	font-size: 32px;
+	text-decoration: underline;
+	font-family: Ubuntu Mono;
+	text-align: center;
+}
+
+.rules p {
+	font-size: 24px;
+	font-family: Ubuntu Mono;
+	text-align: center;
+	margin: 0 300px 0 300px;
+}
+
+.footer {
+    position: relative;
+	padding-top: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	font-size: 20px;
+}
+
+.fa-brands {
+  color: #1CC500;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.6;
+}
+
+.overlay.active {
+  display: block;
+}
+
+.modal {
+	position: fixed;
+	z-index: 1;
+	top: 50%;
+	left: 50%;
+	user-select: none;
+	transform: translate(-50%, -50%) scale(0);
+	transition: 200ms ease-in-out;
+	background-color: #363636;
+	font-family: Bitwise;
+	font-size: 40px;
+	text-align: center;
+	border: 4px solid #1CC500;
+	border-radius: 24px;
+	width: 550px;
+	height: 200px;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.endgameMsg {
+	margin-top: 30px;
+}
+
+.restartBtn {
+	background-color: #ffffff;
+	color: #000000;
+	font-family: Ubuntu Mono;
+	font-size: 32px;
+	text-align: center;
+	margin: auto;
+	border-radius: 8px;
+}

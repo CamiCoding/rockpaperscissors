@@ -3,55 +3,66 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <script src="https://kit.fontawesome.com/77133b1b16.js" crossorigin="anonymous"></script>
+        <title>Rock, Paper, Scissors, Lizard, Spock</title>
     </head>
     <body>
-        <script>
-            let weapons = ["rock", "paper", "scissors"];
-            let playerScore = 0;
-            let computerScore = 0;
+        <div class="container">
+            <div class="title">
+                <h1></h1>
+                <h2></h2>
+            </div>
+            <div class="weapons">
+                <div class="weapon" id="rock">
+                    <div><img src="rock.png" alt="rock"></div>
+                    <p>Rock</p>
+                </div>
+                <div class="weapon" id="paper">
+                    <div><img src="paper.png" alt="paper"></div>
+                    <p>Paper</p>
+                </div>
+                <div class="weapon" id="scissors">
+                    <div><img id="scissors" src="scissors.png" alt="scissors"></div>
+                    <p>Scissors</p>
+                </div>
+                <div class="weapon" id="lizard">
+                    <div><img src="lizard.png" alt="lizard"></div>
+                    <p>Lizard</p>
+                </div>
+                <div class="weapon" id="spock">
+                    <div><img src="spock.png" alt="spock"></div>
+                    <p>Spock</p>
+                </div>
+            </div>
+            <h1 class="score-title">Score</h1>
+            <div class="score">
+                <div class="playerScore">
+                    <h2>You</h2>
+                    <span id="playerScore">0</span>
+                </div>
+                <div class="computerScore">
+                    <h2>Me</h2>
+                    <span id="computerScore">0</span>
+                </div>
+            </div>
+            <span id="message"></span>
+            <div class="rules">
+                <h3>Rules:</h3>
+                <p>"Scissors cuts Paper, Paper covers Rock, Rock crushes Lizard, Lizard poisons Spock, Spock smashes Scissors, Scissors decapitates Lizard, Lizard eats Paper, Paper disproves Spock, Spock vaporizes Rock, and as it always has, Rock crushes Scissors."</p>
+            </div>
+        </div>
+        <div class="overlay" id="overlay"></div>
+            <div class="modal" id="modal">
+                <p class="endgameMsg" id="endgameMsg"></p>
+                <button class="restartBtn" id="restartBtn">Play again</button>
+            </div>
 
-            function computerPlay() {
-                const random = Math.floor(Math.random()*weapons.length);
-                return weapons[random];
-            }
-
-            function playRound(playerSelection, computerSelection) {
-                playerSelection = playerSelection.toLowerCase();
-
-                if (playerSelection == computerSelection) {
-                    console.log(`It's a tie! ${computerSelection} vs ${playerSelection}`);
-                } else if (
-                    (playerSelection == "paper" && computerSelection == "scissors") ||
-                    (playerSelection == "rock" && computerSelection == "paper") ||
-                    (playerSelection == "scissors" && computerSelection == "rock")) {
-
-                    computerScore++;    
-                    console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
-                } else {
-                    playerScore++;
-                    console.log(`You win! ${playerSelection} beats ${computerSelection}`);
-                }
-            }
-
-            function game() {
-                for (let i = 1; i < 6; i++) {
-                    const playerSelection = prompt("Please choose your weapon: ");
-                    const computerSelection = computerPlay();
-                    console.log(`Round ${i}`)
-                    playRound(playerSelection, computerSelection);
-                    console.log(`You: ${playerScore} - Me: ${computerScore}`)
-                }
-
-                if (playerScore > computerScore) {
-                        console.log("Congratulations, you won the match!")
-                    } else {
-                        console.log("You lost the match, better luck next time!")
-                    }
-                }
-
-            game();
-        </script>
+        <footer class="footer">
+            <p>Copyright © CamiCoding 2022</p>
+            <a href="https://www.github.com/CamiCoding/" target=”_blank”><i class="fa-brands fa-github fa-beat" style="--fa-beat-scale: 2.0;"></i></a>
+        </footer>
+        <script src="script.js"></script>
     </body>
     </html>
